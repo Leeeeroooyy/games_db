@@ -8,9 +8,10 @@ cd backend
 npm install
 npm run seed
 npm run dev
-
+```
 ### 3) Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
+```
