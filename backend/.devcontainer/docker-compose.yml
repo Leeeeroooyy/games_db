@@ -1,0 +1,25 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspaces/project:cached
+    command: sleep infinity
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/gamesdb
+      - PORT=3000
+    depends_on:
+      - mongo
+    ports:
+      - "3000:3000"
+      - "5173:5173"
+
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

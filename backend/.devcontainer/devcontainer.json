@@ -1,0 +1,8 @@
+{
+  "name": "games_db",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/project",
+  "forwardPorts": [3000, 5173],
+  "postCreateCommand": "cd backend && npm install && cd ../frontend && npm install"
+}
